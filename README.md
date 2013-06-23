@@ -7,7 +7,7 @@ This project is the product of many years of iterative development and combined
 community knowledge. It does not impose a specific development philosophy or
 framework, so you're free to architect your code in the way that you want.
 
-* Source: [https://github.com/Tobystereo/Poetry-Mashup](https://github.com/Tobystereo/Poetry-Mashup)
+* Source: [https://github.com/Tobystereo/PoetryMash](https://github.com/Tobystereo/PoetryMash)
 * Twitter: [@poetrymash](http://twitter.com/poetrymash)
 
 
