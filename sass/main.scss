@@ -1,0 +1,131 @@
+@import "h5bp";
+@include h5bp-normalize;
+@include h5bp-base-styles;
+@include h5bp-chromeframe;
+
+$col_1: rgba(87,195,164, 1);
+$col_2: rgba(223,129,133, 1);
+$col_3: rgba(173,183,90, 1);
+$col_4: rgba(189,160,201, 1);
+$col_5: rgba(210,155,82, 1);
+$col_6: rgba(105,188,203, 1);
+$col_7: rgba(129,198,125, 1);
+
+$col_text_dark: rgba(100, 100, 100, 1);
+
+body {
+	text-align: center;
+}
+
+.dj_console {
+	width: 100%;
+	clear: both;
+
+	& .playlist {
+		& li {
+			list-style: none;
+			display: block;
+			position: relative;
+
+			&:nth-of-type(odd) a {
+				background-color: $col_1;
+			}
+
+			&:nth-of-type(even) a {
+				background-color: $col_3;
+			}
+
+			& a {
+				display: block;
+				position: relative;
+				float: left;
+
+				display: block;
+				position: relative;
+				float: left;
+				width: 44px;
+				height: 44px;
+				text-align: center;
+				font-size: 15px;
+				line-height: 44px;
+				text-decoration: none;
+				color: $col_text_dark;
+			}
+			
+		}
+	}
+
+	& .playlist1 {
+		position: absolute;
+		left: 10px;
+		margin-top: -50px;
+	}
+
+	& .playlist2 {
+		position: absolute;
+		right: 10px;
+		margin-top: -50px;
+	}
+}
+
+#sonnet_display {
+	display: block;
+	clear: both;
+	width: 100%;
+}
+
+@mixin last_two_rows_indent {
+	& p:nth-of-type(14), & p:nth-of-type(15) {
+		padding-left: 2em;
+	}
+}
+
+#playlist1_preview, #playlist_preview, #sonnet_mashup {
+	display: block;
+	vertical-align: top;
+	// position: relative;
+	// float: left;
+	width: 300px;
+	// top: 150px;
+	// border: red solid 1px;
+}
+
+#playlist1_preview {
+	position: absolute;
+	left: 0;
+	background-color: transparentize($col_1, 0.8);
+	font-size: 0.7em;
+
+	@include last_two_rows_indent;	
+}
+
+#playlist2_preview {
+	position: absolute;
+	right: 0;
+	font-size: 0.7em;
+	background-color: transparentize($col_2, 0.8);
+
+	@include last_two_rows_indent;
+}
+
+#sonnet_mashup {
+	position: relative;
+	margin: 0 auto;
+	margin-top: 0;
+	width: 600px;
+	font-size: 1.2em;
+	text-align: left;
+
+	@include last_two_rows_indent;
+}
+
+// .a {color: $col_1;}
+// .b {color: $col_2;}
+// .c {color: $col_3;}
+// .d {color: $col_4;}
+// .e {color: $col_5;}
+// .f {color: $col_6;}
+// .g {color: $col_7;}
+
+.a, .c, .e, .g { color: $col_1; }
+.b, .d, .f { color: $col_2; }
