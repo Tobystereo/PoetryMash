@@ -1,72 +1,39 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+# Poetry Mashup
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+HTML5 Boilerplate is a professional front-end template for building fast,
+robust, and adaptable web apps or sites.
 
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+This project is the product of many years of iterative development and combined
+community knowledge. It does not impose a specific development philosophy or
+framework, so you're free to architect your code in the way that you want.
 
-        <!-- Add your site or application content here -->
-        <h1>Poetry Shake</h1>
-        <div class="dj_console">
-            <div class="playlist playlist1">
-                <select name="" id="playlist1"></select>
-                <!-- <ul id="playlist1"></ul>     -->
-            </div>
+* Source: [https://github.com/Tobystereo/Poetry-Mashup](https://github.com/Tobystereo/Poetry-Mashup)
+* Twitter: [@poetrymash](http://twitter.com/poetrymash)
 
-            <div class="playlist playlist2">
-                <select name="" id="playlist2"></select>
-                <!-- <ul id="playlist2"></ul>     -->
-            </div>
-            <!-- <select name="" id="" class="playlist"></select> -->
-        </div>
-        <div id="sonnet_display">
-            <div id="playlist1_preview"></div>
-            <div id="playlist2_preview"></div>
-            <div id="sonnet_mashup">
-                <p id="sonnet_mashup_headline" class="number"></p>
-                <p id="line1" class="a"></p>
-                <p id="line2" class="b"></p>
-                <p id="line3" class="a"></p>
-                <p id="line4" class="b"></p>
-                <p id="line5" class="c"></p>
-                <p id="line6" class="d"></p>
-                <p id="line7" class="c"></p>
-                <p id="line8" class="d"></p>
-                <p id="line9" class="e"></p>
-                <p id="line10" class="f"></p>
-                <p id="line11" class="e"></p>
-                <p id="line12" class="f"></p>
-                <p id="line13" class="g"></p>
-                <p id="line14" class="g"></p>
-            </div>
-        </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+## Quick start
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
-</html>
+1. Choose a sonnet on the left
+2. Choose a sonnet on the right
+3. View the mashed up sonnet
+4. Repeat
+
+
+## Features
+
+* select two Shakespeare sonnets 
+* Create a new sonnet made up of components of selected sonnets.
+
+
+## Documentation
+
+<!-- Take a look at the [documentation table of
+contents](/h5bp/html5-boilerplate/blob/master/doc/TOC.md). This
+documentation is bundled with the project, which makes it readily available for
+offline reading and provides a useful starting point for any documentation
+you want to write about your project.
+ -->
+
+## Contributing
+
+Feel free to fork this project and submit enhancements you have made.
