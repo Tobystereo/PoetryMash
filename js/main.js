@@ -1,8 +1,8 @@
 /* 
 
-Shakespeare Mashup - Sonnet Edition
-Remixing Shakespeare by combining two of his sonnets to create something new and beatutiful.
-An experiment in new forms of poetry.
+PoetryMash - Shakespearean Sonnet Edition
+Remix Shakespeare by combining his sonnets to create something new and beatutiful.
+An exploration in new forms of poetry and narrative.
 
 TODO:
 - random button
@@ -16,33 +16,32 @@ TODO:
 
 
 $(document).ready(function() {
-   // put all your jQuery goodness in here.
 
    loadFile('shakespeare_sonnets_tab.txt');
 
  }); 
 
 var sonnets;
+var sonnet1;
+var sonnet2;
 var numberOfSonnets;
+var playlist1_value = 0;
+var playlist2_value = 0;
 
 
 function loadFile(file_name) {
 	var txtFile = new XMLHttpRequest();
 	txtFile.open("GET", "data/"+ file_name, true);
 	txtFile.onreadystatechange = function() {
-		console.log(txtFile.readyState);
 		if (txtFile.readyState === 4) {  // Makes sure the document is ready to parse.
 	        if (txtFile.status === 200) {  // Makes sure it's found the file.
     	        var allText = txtFile.responseText;
       	        
       	        var allTextLines = allText.match(/[^\r\n]+/g);
       	         // it is both the entire match and capture. It appears regex.exec(string) returns on finding the first match regardless of global modifier, wheras string.match(regex) is honouring global.
-      	        console.log("allTextLines.length: " + allTextLines.length);
       	        
       	        sonnets = new Array(allTextLines.length);
       	        numberOfSonnets = sonnets.length;
-
-      	        console.log(allTextLines[0].split("\t"));  // tab separated
 
       	        for(var i=0; i<allTextLines.length; i++) {
       	        	var thisTextLine = allTextLines[i].split("\t"); // tab separated
@@ -53,12 +52,14 @@ function loadFile(file_name) {
 	      	        }
       	        }
 
-      	        console.log("sonnets[0][0]: " + sonnets[0][0]);  
       	        createPlaylists(1);
       	        createPlaylists(2);
+      	        createSet();
       	        sonnet1 = sonnets[0];
 				sonnet2 = sonnets[0];
-
+				selectSonnet(0, 1);
+				selectSonnet(0, 2);
+				mashupSonnets();
 			} 
 	    }
 	}
@@ -66,11 +67,8 @@ function loadFile(file_name) {
 	txtFile.send(null);
 }
 
-var playlist1_value = 1;
-var playlist2_value = 1;
 
-function createPlaylists(playlist_number) 
-{
+function createPlaylists(playlist_number) {
 	// list 
 	// for(var k=0; k<numberOfSonnets; k++) {
 	// 	var theobject = document.createElement("li"); // value=\"" + (k+1) + "\"></object>");
@@ -97,15 +95,11 @@ function createPlaylists(playlist_number)
 		theobject.setAttribute('value', k);
 		
 		theplaylist.appendChild(theobject);		
-
-		console.log("length of this sonnet: " + sonnets[k].length);
 	}	
 
 	// add event listeners
 	theplaylist.addEventListener('change', function() {
 		var thevalue = theplaylist.options[theplaylist.selectedIndex].value;
-		// var thesonnet = theplaylist.getA
-		console.log(thevalue);
 		
 		if(playlist_number == 1) { playlist1_value = thevalue; }
 		if(playlist_number == 2) { playlist2_value = thevalue; }
@@ -115,13 +109,51 @@ function createPlaylists(playlist_number)
 	});
 }
 
+function createSet() {
+	var thebutton = document.createElement("button");
+	var thebutton_label = document.createTextNode("Mash It!");
+	thebutton.appendChild(thebutton_label);
+	var thedjconsole = document.getElementById("dj_console");
+	thedjconsole.appendChild(thebutton);
+
+	thebutton.addEventListener("click", function() {
+		mashIt();
+	});
+}
+
+function mashIt() {
+	chooseRandomSonnetAndSelectInDropDown(1);
+	chooseRandomSonnetAndSelectInDropDown(2);
+
+	mashupSonnets();
+}
+
+function chooseRandomSonnetAndSelectInDropDown(playlist_number) {
+	var randomSonnet = Math.random();
+	randomSonnet = map(randomSonnet, 0, 1, 0, numberOfSonnets);
+	randomSonnet = Math.floor(randomSonnet);
+
+	if (playlist_number == 1) {
+		playlist1_value = randomSonnet;
+	} else if (playlist_number == 2) {
+		playlist2_value = randomSonnet;
+	}
+
+	var theplaylist = document.getElementById("playlist" + playlist_number);
+	theplaylist.selectedIndex = randomSonnet;
+	
+	selectSonnet(randomSonnet, playlist_number);
+	
+}
+
+
 function selectSonnet(sonnet_number, playlist_number) {
 	var thedisplay = document.getElementById("playlist" + playlist_number + "_preview");
 	while (thedisplay.hasChildNodes()) {
 	    thedisplay.removeChild(thedisplay.lastChild);
 	}
 	var thesonnet = sonnets[sonnet_number];
-	console.log(thesonnet);
+
 	for (var i=0; i<thesonnet.length; i++){
 		var theparagraph = document.createElement("p");
 		var thesonnetline = document.createTextNode(sonnets[sonnet_number][i]);
@@ -130,9 +162,6 @@ function selectSonnet(sonnet_number, playlist_number) {
 	}
 	
 }
-
-var sonnet1;
-var sonnet2;
 
 function mashupSonnets() {
 	var thedisplay = document.getElementById("sonnet_mashup");
@@ -183,22 +212,8 @@ function clearContent(element) {
 	}
 }
 
-
-// <div id="sonnet_mashup">
-//     <p id="sonnet_mashup_headline" class="number"></p>
-//     <p id="line01" class="a"></p>
-//     <p id="line02" class="b"></p>
-//     <p id="line03" class="a"></p>
-//     <p id="line04" class="b"></p>
-//     <p id="line05" class="c"></p>
-//     <p id="line06" class="d"></p>
-//     <p id="line07" class="c"></p>
-//     <p id="line08" class="d"></p>
-//     <p id="line09" class="e"></p>
-//     <p id="line10" class="f"></p>
-//     <p id="line11" class="e"></p>
-//     <p id="line12" class="f"></p>
-//     <p id="line13" class="g"></p>
-//     <p id="line14" class="g"></p>
-// </div>
+function map(value, originalMin, originalMax, targetMin, targetMax) {
+	var returnValue = targetMin + ((value-originalMin) / (originalMax-originalMin) * (targetMax-targetMin));
+	return returnValue;
+}
 
