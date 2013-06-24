@@ -13,8 +13,12 @@ $col_7: rgba(129,198,125, 1);
 
 $col_text_dark: rgba(100, 100, 100, 1);
 
-body {
+header {
 	text-align: center;
+}
+
+body {
+	text-align: left;
 }
 
 .dj_console {
@@ -95,6 +99,7 @@ body {
 	left: 0;
 	background-color: transparentize($col_1, 0.8);
 	font-size: 0.7em;
+	text-align: left;
 
 	@include last_two_rows_indent;	
 }
@@ -104,6 +109,7 @@ body {
 	right: 0;
 	font-size: 0.7em;
 	background-color: transparentize($col_2, 0.8);
+	text-align: left;
 
 	@include last_two_rows_indent;
 }
