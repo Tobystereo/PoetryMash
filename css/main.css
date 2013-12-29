@@ -695,3 +695,13 @@ a, a:active, a:visited, a:hover {
   color: #e6c680;
   text-decoration: none;
 }
+
+/* line 290, ../sass/main.scss */
+.preview_image {
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -1px;
+  left: -1px;
+}

@@ -286,3 +286,12 @@ a, a:active, a:visited, a:hover {
     color: $col_2;
     text-decoration:none;
 }
+
+.preview_image {
+    display: block;
+    position:absolute;
+    width: 0;
+    height: 0;
+    top: -1px;
+    left: -1px;
+}

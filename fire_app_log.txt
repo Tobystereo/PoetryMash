@@ -146,3 +146,8 @@
 2013-12-28 22:37:51 overwrite css/main.css 
 2013-12-28 22:38:30 overwrite css/main.css 
 2013-12-28 22:38:45 overwrite css/main.css 
+2013-12-28 22:48:46     error sass/main.scss (Line 291: Invalid CSS after ".preview_image": expected "{", was "")
+2013-12-28 22:48:46 overwrite css/main.css 
+2013-12-28 22:49:32 overwrite css/main.css 
+2013-12-28 22:50:21 overwrite css/main.css 
+2013-12-28 22:50:44 overwrite css/main.css 
