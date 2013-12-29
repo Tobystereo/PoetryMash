@@ -220,7 +220,7 @@ function map(value, originalMin, originalMax, targetMin, targetMax) {
 
 function shareFacebook(theheadline_text) {
 	var fblink = document.getElementById('fblink');
-	fblink.href = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://tobystereo.github.io/PoetryMash/&p[images][0]=&p[title]=PoetryMash:%20I%20mMshed-Up%20Shakespeare%20Sonnets%20" + theheadline_text + "&p[summary]=PoetryMash%20is%20an%20exploration%20of%20new%20forms%20of%20poetry%20and%20literature%20by%20introducing%20interaction%20and%20code.%20It%20allows%20the%20user%20to%20combine%20Shakespeare%20sonnets%20and%20create%20new%20meaning%20and%20beauty.";
+	fblink.href = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://tobystereo.github.io/PoetryMash/&p[images][0]=&p[title]=PoetryMash:%20I%20Mashed-Up%20Shakespeare%20Sonnets%20" + theheadline_text + "&p[summary]=PoetryMash%20is%20an%20exploration%20of%20new%20forms%20of%20poetry%20and%20literature%20by%20introducing%20interaction%20and%20code.%20It%20allows%20the%20user%20to%20combine%20Shakespeare%20sonnets%20and%20create%20new%20meaning%20and%20beauty.";
 }
 
 
