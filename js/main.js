@@ -7,8 +7,6 @@ An exploration in new forms of poetry and narrative.
 TODO:
 - random button
 - deep linking / URL scheme
-- visual design
-- social sharing
 - ability to edit lines
 - drag & drop for 9 hotzones (7 rhyming pairs and A/B)
 
@@ -110,9 +108,10 @@ function createPlaylists(playlist_number) {
 }
 
 function createSet() {
-	var thebutton = document.createElement("button");
-	var thebutton_label = document.createTextNode("Mash It!");
+	var thebutton = document.createElement("a");
+	var thebutton_label = document.createTextNode("randomize");
 	thebutton.appendChild(thebutton_label);
+	thebutton.setAttribute("id", "random");
 	var thedjconsole = document.getElementById("dj_console");
 	thedjconsole.appendChild(thebutton);
 
@@ -179,6 +178,8 @@ function mashupSonnets() {
 			the_text_node = document.createTextNode(theheadline_text);
 			the_element = document.getElementById("sonnet_mashup_headline");
 
+			shareFacebook(theheadline_text);
+
 		} else if ( i > 0 && i < 13) {
 
 			if( i % 2 == 0) {
@@ -216,4 +217,11 @@ function map(value, originalMin, originalMax, targetMin, targetMax) {
 	var returnValue = targetMin + ((value-originalMin) / (originalMax-originalMin) * (targetMax-targetMin));
 	return returnValue;
 }
+
+function shareFacebook(theheadline_text) {
+	var fblink = document.getElementById('fblink');
+	fblink.href = "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://tobystereo.github.io/PoetryMash/&p[images][0]=&p[title]=PoetryMash:%20I%20mMshed-Up%20Shakespeare%20Sonnets%20" + theheadline_text + "&p[summary]=PoetryMash%20is%20an%20exploration%20of%20new%20forms%20of%20poetry%20and%20literature%20by%20introducing%20interaction%20and%20code.%20It%20allows%20the%20user%20to%20combine%20Shakespeare%20sonnets%20and%20create%20new%20meaning%20and%20beauty.";
+}
+
+
 

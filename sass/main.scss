@@ -3,15 +3,12 @@
 @include h5bp-base-styles;
 @include h5bp-chromeframe;
 
-$col_1: rgba(87,195,164, 1);
-$col_2: rgba(223,129,133, 1);
-$col_3: rgba(173,183,90, 1);
-$col_4: rgba(189,160,201, 1);
-$col_5: rgba(210,155,82, 1);
-$col_6: rgba(105,188,203, 1);
-$col_7: rgba(129,198,125, 1);
+$col_1: #5A574A;
+$col_2: #E6C680;
+$col_3: #A89F84;
+$col_4: #2A44A1; // facebook share
 
-$col_text_dark: rgba(100, 100, 100, 1);
+$col_text_dark: $col_1;
 
 header {
 	text-align: center;
@@ -19,13 +16,47 @@ header {
 
 body {
 	text-align: left;
+    width: 960px;
+    margin: 0 auto;
+    color: $col_1;
+}
+
+.hide_me {
+    text-indent: 100%;
+    overflow:hidden;
 }
 
 .dj_console {
+    display: block;
+    position: relative;
 	width: 100%;
+    height: 175px;
 	clear: both;
+    float: none;
+    margin-top: -100px;
 
 	& .playlist {
+        width: 180px !important;
+        height: 54px !important;
+        overflow: hidden;
+        border: 1px solid #ccc;
+
+		& select {
+			background: transparent;
+			width: 180px;
+			padding: 15px;
+			font-size: 24px;
+			font-family: 'Georgia';
+			font-weight: bold;
+			text-transform: uppercase;
+			line-height: 1;
+			border: 0;
+			border-radius: 0;
+			height: 53px;
+            text-align: center;
+			-webkit-appearance: none;
+		}
+
 		& li {
 			list-style: none;
 			display: block;
@@ -36,7 +67,7 @@ body {
 			}
 
 			&:nth-of-type(even) a {
-				background-color: $col_3;
+				background-color: $col_2;
 			}
 
 			& a {
@@ -55,20 +86,77 @@ body {
 				text-decoration: none;
 				color: $col_text_dark;
 			}
-			
+
 		}
 	}
 
 	& .playlist1 {
 		position: absolute;
-		left: 10px;
-		margin-top: -50px;
+		left: 286px;
+		border: 1px solid $col_1;
+        overflow:visible;
+
+        & select {
+            color: $col_1;
+        }
+
+        &:after {
+            display: block;
+            content: "\ ";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid $col_1;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            left: 183px;
+            top: 7px;
+        }
+        &:before {
+            display: block;
+            content: "\ ";
+            position: absolute;
+            width: 3px;
+            height: 40px;
+            background-color: $col_1;
+            top: 7px;
+            left: 180px;
+        }
 	}
 
 	& .playlist2 {
 		position: absolute;
-		right: 10px;
-		margin-top: -50px;
+		left: 499px;
+		margin-top: 25px;
+        border: 1px solid $col_2;
+        overflow:visible;
+
+        & select {
+            color: $col_2;
+        }
+
+        &:after {
+            display: block;
+            content: "\ ";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-right: 20px solid $col_2;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            left: -23px;
+            top: 7px;
+        }
+        &:before {
+            display: block;
+            content: "\ ";
+            position: absolute;
+            width: 3px;
+            height: 40px;
+            background-color: $col_2;
+            top: 7px;
+            left: -3px;
+        }
 	}
 }
 
@@ -84,14 +172,14 @@ body {
 	}
 }
 
-#playlist1_preview, #playlist_preview, #sonnet_mashup {
+#playlist1_preview, #playlist2_preview, #sonnet_mashup {
 	display: block;
 	vertical-align: top;
-	// position: relative;
-	// float: left;
 	width: 300px;
-	// top: 150px;
-	// border: red solid 1px;
+}
+
+#playlist1_preview, #playlist2_preview {
+    display: none;
 }
 
 #playlist1_preview {
@@ -101,7 +189,7 @@ body {
 	font-size: 0.7em;
 	text-align: left;
 
-	@include last_two_rows_indent;	
+	@include last_two_rows_indent;
 }
 
 #playlist2_preview {
@@ -119,19 +207,82 @@ body {
 	margin: 0 auto;
 	margin-top: 0;
 	width: 600px;
-	font-size: 1.2em;
-	text-align: left;
+    font-family: 'Georgia';
+	font-size: 19px;
+	text-align: center;
 
-	@include last_two_rows_indent;
+//	@include last_two_rows_indent;
 }
 
-// .a {color: $col_1;}
-// .b {color: $col_2;}
-// .c {color: $col_3;}
-// .d {color: $col_4;}
-// .e {color: $col_5;}
-// .f {color: $col_6;}
-// .g {color: $col_7;}
+#sonnet_mashup_headline {
+    display: none;
+}
 
 .a, .c, .e, .g { color: $col_1; }
 .b, .d, .f { color: $col_2; }
+
+
+.share_facebook, #random {
+    position: relative;
+    margin: 4em auto;
+    border: 1px solid $col_4;
+    width: 180px !important;
+    height: 54px !important;
+    display: block;
+    line-height: 54px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Georgia';
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $col_4 !important;
+}
+
+#random {
+    border: 1px solid $col_3;
+    color: $col_3 !important;
+    text-transform:lowercase;
+    font-weight: normal;
+    font-style:italic;
+    margin-top: -105px;
+}
+
+.or {
+    text-align: center;
+    color: $col_3 !important;
+    text-transform:lowercase;
+    font-weight: normal;
+    font-style:italic;
+    font-family: 'Georgia';
+    font-size: 14px;
+    display: block;
+    margin-top:20px;
+    clear: both;
+}
+
+footer {
+    text-align:center;
+    font-family: 'Georgia';
+
+    & h1 {
+        font-size: 29px;
+        font-style: italic;
+        color: $col_3;
+        font-weight: normal;
+    }
+
+    & p {
+        font-size: 19px;
+        color: $col_1;
+        display:block;
+        width: 650px;
+        margin: 2em auto;
+        line-height:26px;
+    }
+}
+
+a, a:active, a:visited, a:hover {
+    color: $col_2;
+    text-decoration:none;
+}
