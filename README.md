@@ -1,11 +1,8 @@
 # PoetryMash
 
-HTML5 Boilerplate is a professional front-end template for building fast,
-robust, and adaptable web apps or sites.
+![PoetryMash screenshot](https://github.com/Tobystereo/PoetryMash/blob/gh-pages/images/PoetryMash_ScreenShot_1200x800.png?raw=true)
 
-This project is the product of many years of iterative development and combined
-community knowledge. It does not impose a specific development philosophy or
-framework, so you're free to architect your code in the way that you want.
+@PoetryMash is an exploration of new forms of poetry and literature by introducing interaction and code. It allows the user to combine Shakespeare sonnets and create new meaning and beauty.
 
 * Source: [https://github.com/Tobystereo/PoetryMash](https://github.com/Tobystereo/PoetryMash)
 * Twitter: [@poetrymash](http://twitter.com/poetrymash)
@@ -13,10 +10,18 @@ framework, so you're free to architect your code in the way that you want.
 
 ## Quick start
 
-1. Choose a sonnet on the left
+1. Click "randomize"
+
+or
+
+1. Choose a sonnet on the left 
 2. Choose a sonnet on the right
+
+then
+
 3. View the mashed up sonnet
-4. Repeat
+4. Discover new meaning and beauty
+5. Repeat
 
 
 ## Features
@@ -24,15 +29,6 @@ framework, so you're free to architect your code in the way that you want.
 * select two Shakespeare sonnets 
 * Create a new sonnet made up of components of selected sonnets.
 
-
-## Documentation
-
-<!-- Take a look at the [documentation table of
-contents](/h5bp/html5-boilerplate/blob/master/doc/TOC.md). This
-documentation is bundled with the project, which makes it readily available for
-offline reading and provides a useful starting point for any documentation
-you want to write about your project.
- -->
 
 ## Contributing
 
