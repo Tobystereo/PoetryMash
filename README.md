@@ -33,6 +33,9 @@ documentation is bundled with the project, which makes it readily available for
 offline reading and provides a useful starting point for any documentation
 you want to write about your project.
  -->
+ 
+ ## Todo
+ - add other forms of poetry (Haiku, Limerick)
 
 ## Contributing
 
